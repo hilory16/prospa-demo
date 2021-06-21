@@ -11,8 +11,8 @@ function SignUp() {
   return (
     <Wrapper>
       <div className="onboarding-content d-flex">
-        <OnboardingInfoSlides initial/>
-        <OnboardingFormArea>
+        <OnboardingInfoSlides />
+        <OnboardingFormArea initial>
           <SignupForm/>
         </OnboardingFormArea>
       </div>
