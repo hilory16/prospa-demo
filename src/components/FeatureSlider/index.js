@@ -1,8 +1,7 @@
 
 import React,{ Component } from 'react'
 import Slider from "react-slick";
-import FeatureSliderItem from './FeatureSliderItem';
-import Timer from '../Timer'
+import FeatureSliderItem from '../FeatureSliderItem';
 import OpenVaultImg from '../../assets/img/open-vault.png';
 // Import css files
 import "slick-carousel/slick/slick.css";
@@ -12,7 +11,6 @@ import {Wrapper} from './style'
 export default class Index extends Component {
   
   constructor() {
-    
       super();
       this.state = { activeSlideIndex:0, activeInterval:0};
       this.timer = 0;
@@ -21,7 +19,6 @@ export default class Index extends Component {
       this.next = this.next.bind(this);
       this.previous = this.previous.bind(this);
     }
-
     next() {
       this.slider.slickNext();
     }
@@ -48,9 +45,9 @@ export default class Index extends Component {
     const {activeSlideIndex, activeInterval} = this.state
     const slides = [0,1,2,3,4]
     return slides.map((item, i) => {
-      if(activeSlideIndex == i) return(
+      if(activeSlideIndex === i) return(
           <div className="slides-indicator-item" key={i}>
-            <span className="active" style={{width:`${(activeInterval) *15.5}%`}}></span>
+            <span className="active" style={{width:`${(activeInterval) * 15.5}%`}}></span>
           </div>
       )
       return (<div className={`slides-indicator-item ${activeSlideIndex > i ? 'viewed' : ''}`}></div>)
@@ -79,15 +76,6 @@ export default class Index extends Component {
 
         return (
           <Wrapper>
-            {/* <div className="slides-indicators">
-                <div className="slides-indicator-item viewed"></div>
-                <div className="slides-indicator-item viewed"></div>
-                <div className="slides-indicator-item">
-                  <span className="active"></span>
-                </div>
-                <div className="slides-indicator-item"></div>
-                <div className="slides-indicator-item"></div>
-            </div> */}
             <div className="prev slider-navigation" onClick={this.previous}></div>
             <div className="next slider-navigation" onClick={this.next}></div>
             <div className="slides-indicators">
@@ -95,55 +83,11 @@ export default class Index extends Component {
             </div>
             
             <Slider ref={c => (this.slider = c)} {...settings}>
-              <FeatureSliderItem>
-                <div>
-                    <div className="slide-description">
-                        <h2 className="">Create multiple sub-account</h2>
-                        <h6>Organise your business finances easily with multiple accounts. No limits!</h6>
-                    </div>
-                    <img src={OpenVaultImg} alt="vault" className="slide-img"/>
-                </div>
-                
-             </FeatureSliderItem>
-             <FeatureSliderItem>
-                <div>
-                    <div className="slide-description">
-                        <h2 className="">Create Proposals </h2>
-                        <h6>Organise your business finances easily with multiple accounts. No limits now!</h6>
-                    </div>
-                    <img src={OpenVaultImg} alt="vault" className="slide-img"/>
-                </div>
-             </FeatureSliderItem>
-
-             <FeatureSliderItem>
-                <div>
-                    <div className="slide-description">
-                        <h2 className="">Create effecient business plans</h2>
-                        <h6>Organise your business finances easily with multiple accounts. No limits!</h6>
-                    </div>
-                    <img src={OpenVaultImg} alt="vault" className="slide-img"/>
-                </div>
-             </FeatureSliderItem>
-
-             <FeatureSliderItem>
-                <div>
-                    <div className="slide-description">
-                        <h2 className="">Create multiple sub-account</h2>
-                        <h6>Organise your business finances easily with multiple accounts. No limits!</h6>
-                    </div>
-                    <img src={OpenVaultImg} alt="vault" className="slide-img"/>
-                </div>
-             </FeatureSliderItem>
-             <FeatureSliderItem>
-                <div>
-                    <div className="slide-description">
-                        <h2 className="">Create multiple</h2>
-                        <h6>Organise your business finances easily with multiple accounts. No limits!</h6>
-                    </div>
-                    <img src={OpenVaultImg} alt="vault" className="slide-img"/>
-                </div>
-             </FeatureSliderItem>
-             
+             <FeatureSliderItem title="Create multiple sub-account" desc="Organise your business finances easily with multiple accounts. No limits!" img={OpenVaultImg}/>
+             <FeatureSliderItem title="Create Proposals " desc="Organise your business finances easily with multiple accounts. No limits now!" img={OpenVaultImg}/>
+             <FeatureSliderItem title="Create effecient business plans" desc=">Organise your business finances easily with multiple accounts. No limits!" img={OpenVaultImg}/>
+             <FeatureSliderItem title="Create multiple sub-account" desc="Organise your business finances easily with multiple accounts. No limits!" img={OpenVaultImg} />
+             <FeatureSliderItem title="Create multiple" desc="Organise your business finances easily with multiple accounts. No limits!" img={OpenVaultImg} />
             </Slider>
           </Wrapper>
         );
