@@ -2,7 +2,8 @@ import React from 'react';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import { spring,AnimatedSwitch } from 'react-router-transition';
 import Layout from './hocs/Layout';
-import Signup from './pages/Signup'
+import Signup from './pages/Signup';
+import Business from './pages/Business'
 
 
 function mapStyles(styles) {
@@ -51,6 +52,7 @@ const Routes = () =>{
                     mapStyles={mapStyles}
                     className="route-wrapper"
                 >   
+                    <Route path="/signup/2" component={Business} />
                     <Route path="/" component={Signup} />
                     {/* <Route path="/me" component={App} /> */}
                 </AnimatedSwitch>

@@ -85,7 +85,7 @@ export default class Index extends Component {
             <Slider ref={c => (this.slider = c)} {...settings}>
              <FeatureSliderItem title="Create multiple sub-account" desc="Organise your business finances easily with multiple accounts. No limits!" img={OpenVaultImg}/>
              <FeatureSliderItem title="Create Proposals " desc="Organise your business finances easily with multiple accounts. No limits now!" img={OpenVaultImg}/>
-             <FeatureSliderItem title="Create effecient business plans" desc=">Organise your business finances easily with multiple accounts. No limits!" img={OpenVaultImg}/>
+             <FeatureSliderItem title="Create effecient business plans" desc="Organise your business finances easily with multiple accounts. No limits!" img={OpenVaultImg}/>
              <FeatureSliderItem title="Create multiple sub-account" desc="Organise your business finances easily with multiple accounts. No limits!" img={OpenVaultImg} />
              <FeatureSliderItem title="Create multiple" desc="Organise your business finances easily with multiple accounts. No limits!" img={OpenVaultImg} />
             </Slider>

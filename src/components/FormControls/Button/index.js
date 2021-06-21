@@ -14,11 +14,15 @@ const ButtonNextStyles = styled.div`
         outline:none;
         border:none;
     }
+    button.form-error{
+        opacity:.5;
+        cursor: not-allowed
+    }
 `
-const Index = ({name}) => {
+const Index = ({name, classList, handleClick}) => {
     return (
         <ButtonNextStyles>
-            <button className={`submit-button disabled next`} type="submit"> {name}</button>
+            <button className={`submit-button disabled next ${classList}`} type="submit" disabled={classList ? classList.includes('form-error') : null}> {name}</button>
         </ButtonNextStyles>
     );
 }

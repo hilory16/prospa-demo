@@ -95,4 +95,8 @@ export const Wrapper = Styled.div`
         transition:all ease .3s;
         pointer-events:none;
     }
+
+    @media(max-width:767px){
+        max-width:100%;
+    }
 `;

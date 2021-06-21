@@ -4,7 +4,7 @@ const FeatureSliderItem = ({children, title, desc, img}) =>(
         <div>
             <div className="slide-description">
                 <h2 className="">{title}</h2>
-                <h6>Organise your {desc}</h6>
+                <h6>{desc}</h6>
             </div>
             <img src={img} alt="feature-img" className="slide-img"/>
         </div>

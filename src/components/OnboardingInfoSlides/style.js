@@ -1,10 +1,10 @@
 import Styled from 'styled-components';
 
 export const Wrapper = Styled.div`
-        width:26%;
+        width:360px;
         overflow-y:scroll;
         color:#FFFFFF;
-        position:relative;
+        position:fixed;
         height:100%;
         max-width:400px;
         min-width: 358px;

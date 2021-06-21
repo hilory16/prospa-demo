@@ -1,17 +1,17 @@
 import {Wrapper} from './style';
 import OnboardingInfoSlides from '../../components/OnboardingInfoSlides';
 import OnboardingFormArea from '../../components/OnboardingFormArea';
-import SignupForm from '../../components/SignupForm';
+import BusinessTypeForm from '../../components/BusinessTypeForm';
 import 'react-phone-input-2/lib/style.css';
 
-function SignUp({history}) {
+function SignUp() {
 
   return (
     <Wrapper>
       <div className="onboarding-content d-flex">
         <OnboardingInfoSlides />
-        <OnboardingFormArea initial>
-          <SignupForm history={history}/>
+        <OnboardingFormArea>
+          <BusinessTypeForm/>
         </OnboardingFormArea>
       </div>
     </Wrapper>

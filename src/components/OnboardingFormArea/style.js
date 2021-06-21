@@ -1,7 +1,8 @@
 import Styled from 'styled-components';
 
 export const Wrapper = Styled.div`
-    width:75%;
+    padding-left:360px;
+    width:100%;
     .back-img img{
         width:32px;
         height:32px;
@@ -27,8 +28,15 @@ export const Wrapper = Styled.div`
         }
     }
 
+    // IPAD PRO VIEWPORT
+    @media (max-width:1024px){{
+        .sign-in{
+            padding:0 10px;
+        }
+    }
     // MOBILE VIEWPORT
     @media (max-width:767px){
+        padding-left:0;
         width:100%;
         .sign-in{
             padding:0;
