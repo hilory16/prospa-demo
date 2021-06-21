@@ -64,7 +64,7 @@ export default class Index extends Component {
           infinite: true,
           slidesToShow: 1,
           slidesToScroll: 1,
-          autoplay:false,
+          autoplay:true,
           speed: 100,
           autoplaySpeed: 7000,
           fade:true,
