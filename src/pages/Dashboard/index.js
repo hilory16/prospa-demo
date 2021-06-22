@@ -3,6 +3,7 @@ import DashboardSidebar from '../../components/Dashboard/DashboardSidebar'
 import DashboardTopbar from '../../components/Dashboard/DashboardTopbar';
 import Accounts from '../../components/Dashboard/Accounts';
 import CashOutflow from '../../components/Dashboard/CashOutflow';
+import Chart from '../../components/Chart.js'
 import Transactions from '../../components/Dashboard/Transactions'
 import {Wrapper} from './style'
 const Index = () => {
@@ -32,7 +33,7 @@ const Index = () => {
                             <div className="left pr-2">
                                 <div className="summary">
                                     <h4>June summary</h4>
-                                    <div className="d-flex align-items-center ">
+                                    <div className="d-flex align-items-center money-items ">
                                         <div className="money-item">
                                             <h6 className="mb-0">Money in</h6>
                                             <p className="mb-0">N 5,650,000</p>
@@ -45,6 +46,9 @@ const Index = () => {
                                             <h6 className="mb-0">Difference</h6>
                                             <p className="mb-0">N 5,650,000</p>
                                         </div>
+                                    </div>
+                                    <div className="summary-chart">
+                                        <Chart/>
                                     </div>
                                 </div>
                                 

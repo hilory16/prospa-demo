@@ -62,13 +62,14 @@ export const Wrapper = Styled.div`
                 box-shadow: 0px 4px 6px #8397AB29;
                 border-radius: 6px;
                 padding:29px 24px;
-                height:200px;
                 h4{
                     font-size:18px;
                     line-height:24px;
                     font-weight:600;
                     color:#1C1335;
                     margin-bottom:26px;
+                }
+                .money-items{
                 }
                 .money-item{
                     margin-right:55px;
@@ -84,6 +85,14 @@ export const Wrapper = Styled.div`
                         font-weight:600;
                         color: #1C1335;
                     }
+                }
+                tspan{
+                    font-size:10px;
+                    line-height:14px;
+                    color:#8397AB;
+                }
+                &-chart{
+                    height:274px;
                 }
             }
         }
