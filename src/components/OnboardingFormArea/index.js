@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom';
 import {Wrapper} from './style';
 import BackButtonImg from '../../assets/img/back-grey.svg'
 
-const Index = ({children, initial}) => {
+const Index = ({children, initial,signupLink}) => {
     return (
         <Wrapper className="onboarding-form-area">
             <div className="container">
@@ -12,7 +12,12 @@ const Index = ({children, initial}) => {
                             <img src={BackButtonImg} alt="" />
                         </div>
                     }
-                        <p className="text-right mb-0">Already a member? <span><Link to="">Sign In</Link></span></p>
+                    {
+                        !signupLink 
+                        ? <p className="text-right mb-0">Already a member? <span><Link to="/signin">Sign In</Link></span> </p>
+                        : <p className="text-right mb-0">Don’t have an account? <span><Link to="/signup">Sign Up</Link></span></p>
+                    }
+                        
                 </div>
                 {children}
             </div>

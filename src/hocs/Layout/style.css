@@ -30,6 +30,16 @@ code {
     monospace;
 }
 
+.route-wrapper {
+  position: relative;
+  
+}
+
+.route-wrapper > div {
+  position: absolute;
+  width:100%;
+}
+
 .hide-number-arrow::-webkit-outer-spin-button,
 .hide-number-arrow::-webkit-inner-spin-button {
   -webkit-appearance: none;

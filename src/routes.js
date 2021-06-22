@@ -3,12 +3,12 @@ import { Route, BrowserRouter as Router } from 'react-router-dom';
 import { spring,AnimatedSwitch } from 'react-router-transition';
 import Layout from './hocs/Layout';
 import Signup from './pages/Signup';
-import Business from './pages/Business'
-
-
+import Business from './pages/Business';
+import Signin from './pages/Signin'
+import Dashboard from './pages/Dashboard'
 function mapStyles(styles) {
     return {
-      transform: `translateY(${styles.transform}%)`,
+      top:styles.top,
       opacity: styles.opacity
       
     };
@@ -46,12 +46,14 @@ const Routes = () =>{
         <Layout>
             <Router>
                 <AnimatedSwitch
-                    atEnter={{ opacity: 0,transform:0 }}
-                    atLeave={{ opacity: 0,transform:-100}}
-                    atActive={{ opacity: 1, transform:0 }}
+                    atEnter={{ opacity: 0,top:100 }}
+                    atLeave={{ opacity: 0,top:-100}}
+                    atActive={{ opacity: 1, top:0 }}
                     mapStyles={mapStyles}
                     className="route-wrapper"
-                >   
+                >
+                    <Route path="/dashboard" component={Dashboard} />   
+                    <Route path="/signin" component={Signin} />
                     <Route path="/signup/2" component={Business} />
                     <Route path="/" component={Signup} />
                     {/* <Route path="/me" component={App} /> */}
