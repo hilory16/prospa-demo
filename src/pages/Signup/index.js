@@ -1,5 +1,6 @@
 import {useState} from 'react';
-import {CSSTransition } from 'react-transition-group'
+import {CSSTransition } from 'react-transition-group';
+import {Helmet} from 'react-helmet';
 import OnboardingInfoSlides from '../../components/OnboardingInfoSlides';
 import OnboardingFormArea from '../../components/OnboardingFormArea';
 import SignupForm from '../../components/SignupForm';
@@ -18,6 +19,9 @@ function SignUp({history}) {
   // const [inProp, setInProp] = useState(false);
   return (
     <Wrapper>
+      <Helmet>
+        <title>Prospa || Create an account today</title>
+      </Helmet>
       <div className="onboarding-content d-flex">
         <OnboardingInfoSlides />
         <OnboardingFormArea handlePage={() =>{

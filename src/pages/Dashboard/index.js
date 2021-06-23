@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
+import {Helmet} from 'react-helmet';
 import DashboardSidebar from '../../components/Dashboard/DashboardSidebar'
 import DashboardTopbar from '../../components/Dashboard/DashboardTopbar';
 import Accounts from '../../components/Dashboard/Accounts';
@@ -11,6 +12,9 @@ const Index = () => {
     const [showSidebar, setShowSidebar] = useState(false)
     return (
         <Wrapper>
+            <Helmet>
+                <title>Prospa || Dashboard</title>
+            </Helmet>
             <DashboardSidebar showSidebar={showSidebar}/>
             <main className={`main-content-area pb-4 ${showSidebar ? 'no-scroll' : ''}`}>
                 <DashboardTopbar handleSidebar={() => setShowSidebar(!showSidebar)} showSidebar={showSidebar}/>
