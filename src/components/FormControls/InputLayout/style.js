@@ -72,6 +72,18 @@ export const RegularInputWrapper = Styled.div`
         transition:all ease .3s;
         pointer-events:none;
     }
+
+    @media(max-width:767px){
+        label{
+            font-size:13px;
+            line-height:19px;
+        }
+        .input:focus + label, .input:valid + label, .email:not([value=""]) + label{
+            font-size:11px;
+            line-height:16px;
+            top:5px;
+        }
+    }
     
 `
 
@@ -86,6 +98,7 @@ export const CountryCode = Styled(RegularInputWrapper)`
         font-size:10px;
         z-index:500;
         top:7px;
+        transition:all ease .4s;
     }
     .phone-caret{
         position: absolute;
@@ -94,18 +107,20 @@ export const CountryCode = Styled(RegularInputWrapper)`
         right: 10px;
         transform: translateY(-50%);
     }
-    .active-line{
-        width:0%;
-        height:2px;
+    .active-field{
         z-index:300;
-        position:absolute;
         bottom:-1px;
-        background: transparent linear-gradient(270deg, #00D2FF 0%, #7E51FF 51%, #FA4A84 100%) 0% 0% no-repeat padding-box;
-        margin:0 auto;
-        display:block;
-        transition:all ease .4s;
     }
-    .active-line.show{
-        width:90%;
+    .show.active-field::after {
+        width:100%;
+    }
+    .country-code-label.show{
+        color:#FA4A84;
+    }
+    @media(max-width:767px){
+        .country-code-label{
+            top:5px;
+            font-size:11px;
+        }
     }
 `

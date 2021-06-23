@@ -1,5 +1,5 @@
-
-const TransactionItem = ({desc, time,amount,icon}) => {
+import PropTypes from 'prop-types'
+const  TransactionItem= ({desc, time,amount,icon}) => {
     return (
         <li className="d-flex justify-content-between align-items-center">
             <div className="d-flex align-items-center">
@@ -17,3 +17,10 @@ const TransactionItem = ({desc, time,amount,icon}) => {
 }
 
 export default TransactionItem;
+
+    TransactionItem.propTypes ={
+    dsc:PropTypes.string.isRequired,
+    ime:PropTypes.string.isRequired,
+    amount:PropTypes.string.isRequired,
+    icon:PropTypes.object.isRequired,
+}

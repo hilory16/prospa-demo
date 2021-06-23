@@ -6,8 +6,8 @@ import {Wrapper} from './style'
 const Index = () => {
     return (
         <Wrapper className="transactions-container">
-            <div className="d-flex align-items-center justify-content-between transactions-heading">
-                <h4 className="mb-0"> Recent transactions </h4>
+            <div className="d-flex align-items-center justify-content-between transactions-heading flex-wrap">
+                <h4 className="mb-0 mr-4 "> Recent transactions </h4>
                 <Link className="see-all">See all</Link>
             </div>
 

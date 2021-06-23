@@ -17,9 +17,9 @@ export const RegularInput = ({type, name, label}) => {
 
 export const PhoneCountryCode = ({value, name, label, handleChange}) => {
     const [active, setActive] = useState(false)
-    console.log(active)
+    // console.log(active)
     return (
-        <CountryCode className="country-phone-code form-field" onMouseOut={() =>setActive(false)} onMouseOver={() =>setActive(true)}>
+        <CountryCode className="country-phone-code form-field" onFocus={() =>setActive(true)} onBlur={() =>setActive(false)} onMouseLeave={() =>setActive(false)}>
             
             <Field
                 name={name}
@@ -28,10 +28,10 @@ export const PhoneCountryCode = ({value, name, label, handleChange}) => {
                         {...field}
                         country={'ng'}
                         value={value}
-                        // onChange={phone => {
-                        //     setActive(true)
-                        //     handleChange(phone)
-                        // }}
+                        onChange={phone => {
+                            // setActive(true)
+                            handleChange(phone)
+                        }}
                         inputProps={{
                             required: true,
                             autofocus:false
@@ -41,9 +41,9 @@ export const PhoneCountryCode = ({value, name, label, handleChange}) => {
                 )}
             />
             <img src={CaretImg} className="phone-caret" />
-            <label className="country-code-label">{label}</label>
+            <label className={`country-code-label ${active ? 'show': ''}`}>{label}</label>
             {   
-                <div className={`active-field ${!active ? 'show': ''}`}></div>
+                <div className={`active-field ${active ? 'show': ''}`}></div>
             }
             
         </CountryCode>

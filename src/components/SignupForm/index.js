@@ -11,7 +11,7 @@ const validationSchema = yup.object({
     phone:yup.string().required(),
     email:yup.string().email().required()
 })
-const Index = ({history}) => {
+const Index = ({history, handlePage}) => {
     return (
         <Wrapper className="form col-lg-5 px-0 mx-auto">
             <h3 className="onboarding-name mb-0">Create your account</h3>
@@ -30,9 +30,10 @@ const Index = ({history}) => {
                     onSubmit={async (data,{resetForm}) => {
                         console.log(data)
                         try{
-                            setTimeout(() =>{
-                                history.push('/signup/2')
-                            },1000)
+                            // setTimeout(() =>{
+                            //     history.push('/signup/2')
+                            // },1000)
+                            handlePage()
                         }
                         catch(e){
                         }

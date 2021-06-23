@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import {Link} from 'react-router-dom';
 import DashboardSidebar from '../../components/Dashboard/DashboardSidebar'
 import DashboardTopbar from '../../components/Dashboard/DashboardTopbar';
@@ -7,11 +8,12 @@ import Chart from '../../components/Chart.js'
 import Transactions from '../../components/Dashboard/Transactions'
 import {Wrapper} from './style'
 const Index = () => {
+    const [showSidebar, setShowSidebar] = useState(false)
     return (
         <Wrapper>
-            <DashboardSidebar/>
-            <main className="main-content-area pb-4">
-                <DashboardTopbar/>
+            <DashboardSidebar showSidebar={showSidebar}/>
+            <main className={`main-content-area pb-4 ${showSidebar ? 'no-scroll' : ''}`}>
+                <DashboardTopbar handleSidebar={() => setShowSidebar(!showSidebar)} showSidebar={showSidebar}/>
 
                 <div className="dashboard-content container">
                     <div className="d-flex justify-content-between align-items-center welcome-message-container flex-wrap ">

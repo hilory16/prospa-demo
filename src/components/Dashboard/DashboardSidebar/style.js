@@ -1,16 +1,19 @@
 import Styled from 'styled-components';
 
 export const Sidebar = Styled.div`
-    box-shadow: 0px 2px 22px #8397AB3D;
-    position:fixed;
-    left:0;
-    bottom:0;
-    top:0;
-    height:100vh;
-    width:300px;
-    padding:0px 0;
-    z-index:1000;
-    background:#fff;
+    .sidebar{
+        box-shadow: 0px 2px 22px #8397AB3D;
+        position:fixed;
+        left:0;
+        bottom:0;
+        top:0;
+        height:100vh;
+        width:300px;
+        padding:0px 0;
+        z-index:1000;
+        background:#fff;
+        cursor:pointer;
+    }
     .business-accounts{
         border-bottom:1px solid #EEEFF7;
         padding:20px 30px;
@@ -110,12 +113,24 @@ export const Sidebar = Styled.div`
         }
     }
     @media(max-width:995px){
-        width: 270px;
+        .sidebar{
+            width: 270px;
+        }
+        
     }
 
     @media(max-width:767px){
-        // width: 280px;
-        display:none;
+        .sidebar{
+            width:100%;
+            left:-100%;
+            overflow-y:hidden;
+            top:80px;
+            height:calc(100vh - 80px);
+            transition:all ease-in-out .3s;
+        }
+        .sidebar.show{
+            left:0;
+        }
     }
 `
 export const LinkWrapper = Styled.li`

@@ -149,14 +149,57 @@ export const Wrapper = Styled.div`
     }
 
     // BIG-MOBILE
+    // @media(max-width:860px){
+    //     // width: 280px;
+    //     display:none;
+    // }
+
     @media(max-width:767px){
         .main-content-area{
             padding-left:0;
         }
+        .main-content-area.no-scroll{
+            height:100vh;
+            overflow:hidden;
+        }
         .dashboard-content.container {
-            padding-right: 30px;
-            padding-left: 30px;
+            padding-right: 25px;
+            padding-left: 25px;
             max-width:100%;
+        }
+        .dashboard-content .account-analysis .left{
+            padding-right:10px !important; 
+            width: 55%;
+        }
+        .dashboard-content .account-analysis .right{
+            padding-left:10px !important;
+            width: 45%;
+        }
+    }
+    @media(max-width:675px){
+        .dashboard-content .account-analysis .left, .dashboard-content .account-analysis .right{
+            padding:0 !important; 
+            width: 100%;
+        }
+        .dashboard-content .account-analysis .summary .money-item {
+            margin-right: 30px;
+        }
+    }
+    @media(max-width:500px){
+        .dashboard-content.container {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        .dashboard-content .account-analysis .summary .money-item {
+            margin-right: 12px;
+        }
+        .dashboard-content .account-analysis .summary .money-item:last-child{
+            margin-right: 0;
+        }
+    }
+    @media(max-width:320px){
+        .dashboard-content .account-analysis .summary .money-item p, dashboard-content .account-analysis .summary .money-item h6 {
+            font-size: 12px;
         }
     }
 `

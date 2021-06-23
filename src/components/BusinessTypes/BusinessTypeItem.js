@@ -1,4 +1,5 @@
 
+import PropTypes from 'prop-types'
 import GreenTickImg from '../../assets/img/green-tick.svg'
 import {Wrapper} from './style'
 const BusinessTypeItem = ({type, desc, benefits, businessType, setBusinessType, businessTypeValue}) => {
@@ -33,3 +34,12 @@ const BusinessTypeItem = ({type, desc, benefits, businessType, setBusinessType, 
 }
 
 export default BusinessTypeItem;
+
+BusinessTypeItem.propTypes ={
+    type:PropTypes.string.isRequired,
+    desc:PropTypes.string.isRequired,
+    businessType:PropTypes.string.isRequired,
+    businessTypeValue:PropTypes.string.isRequired,
+    playerSelected:PropTypes.bool.isRequired,
+    setBusinessType:PropTypes.func.isRequired
+}

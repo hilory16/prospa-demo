@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import {LinkWrapper} from './style';
 import {NavLink} from 'react-router-dom'
 
@@ -15,3 +16,9 @@ const SidebarLink = ({name, link, Icon}) => {
 }
 
 export default SidebarLink;
+
+SidebarLink.propTypes ={
+    name:PropTypes.string.isRequired,
+    link:PropTypes.string.isRequired,
+    icon:PropTypes.object.isRequired,
+}

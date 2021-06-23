@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 const OutflowItem = ({name, amount, icon}) => {
     return (
         <li className="d-flex align-items-center justify-content-between">
@@ -17,3 +18,9 @@ const OutflowItem = ({name, amount, icon}) => {
 }
 
 export default OutflowItem;
+
+OutflowItem.propTypes ={
+    name:PropTypes.string.isRequired,
+    amount:PropTypes.string.isRequired,
+    icon:PropTypes.object.isRequired,
+}

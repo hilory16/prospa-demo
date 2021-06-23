@@ -15,7 +15,8 @@ const Index = ({history}) => {
             <h6 className="onboarding-description">An account, with powerful, personalised tools all in one place</h6>
             <div>
                 <Formik
-                    validateOnChange={true}
+                    validateOnChange
+                    validateOnMount
                     initialValues={{
                         email:"",
                         password:""

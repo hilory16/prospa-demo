@@ -2,14 +2,14 @@ import {Link} from 'react-router-dom';
 import {Wrapper} from './style';
 import BackButtonImg from '../../assets/img/back-grey.svg'
 
-const Index = ({children, initial,signupLink}) => {
+const Index = ({children, active,signupLink, handlePage}) => {
     return (
-        <Wrapper className="onboarding-form-area">
+        <Wrapper className="onboarding-form-area px-2 ">
             <div className="container">
-                <div className={`d-flex ${initial ? 'justify-content-end':'justify-content-between'} sign-in top-bar align-items-center flex-wrap flex-md-nowrap`}>
+                <div className={`d-flex ${active ==="biodata" ? 'justify-content-end':'justify-content-between'} sign-in top-bar align-items-center flex-wrap flex-md-nowrap`}>
                     {
-                        !initial && <div className="" className="back-img">
-                            <img src={BackButtonImg} alt="" />
+                        active !== "biodata" && <div className="" className="back-img">
+                            <img src={BackButtonImg} alt="" onClick={handlePage}/>
                         </div>
                     }
                     {

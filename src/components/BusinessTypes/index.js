@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import {Wrapper} from './style';
 import BusinessTypeItem from './BusinessTypeItem';
 
@@ -34,3 +35,7 @@ const Index = ({businessTypeValue,setBusinessType}) => {
 }
 
 export default Index;
+Index.propTypes ={
+    businessTypeValue:PropTypes.string.isRequired,
+    setBusinessType:PropTypes.func.isRequired
+}

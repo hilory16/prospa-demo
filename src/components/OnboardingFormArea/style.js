@@ -1,7 +1,7 @@
 import Styled from 'styled-components';
 
 export const Wrapper = Styled.div`
-    padding-left:360px;
+    padding-left:360px !important;
     width:100%;
     .back-img img{
         width:32px;
@@ -36,7 +36,7 @@ export const Wrapper = Styled.div`
     }
     // MOBILE VIEWPORT
     @media (max-width:767px){
-        padding-left:0;
+        padding-left:0 !important;
         width:100%;
         .sign-in{
             padding:0;

@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types'
 import {Wrapper} from './style'
-const Index = ({details, icon}) => {
+export default function Index ({details, icon}){
     const {type,bank,number,balance} = details
     return (
         <Wrapper className="account-item">
@@ -17,4 +18,9 @@ const Index = ({details, icon}) => {
     );
 }
 
-export default Index;
+Index.propTypes ={
+    type:PropTypes.string.isRequired,
+    bank:PropTypes.string.isRequired,
+    number:PropTypes.string.isRequired,
+    balance:PropTypes.string.isRequired
+}

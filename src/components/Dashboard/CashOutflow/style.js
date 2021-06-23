@@ -63,4 +63,11 @@ export const Wrapper = Styled.div`
         }
         
     }
+
+    @media(max-width:767px){
+        ul li .bar {
+            width: 100px !important;
+        }
+        
+    }
 `

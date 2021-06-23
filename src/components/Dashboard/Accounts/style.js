@@ -46,4 +46,22 @@ export const Wrapper = Styled.div`
             display:block;
         }
     }
+    @media(max-width:767px){
+        .reduce{
+            width:50%;
+        }
+        .reduce-left{
+            padding-right:10px !important;
+        }
+        .reduce-right{
+            padding-left:10px !important;
+        }
+    }
+    @media(max-width:767px){
+        .reduce{
+            width:100%;
+            // padding:0px 20px !important;
+        }
+       
+    }
 `

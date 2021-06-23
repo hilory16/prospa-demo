@@ -5,10 +5,19 @@ export const Wrapper = Styled.div`
     padding-bottom:20px;
     background:#fff;
     max-width:100%;
+    
     .tb-content{
         max-width:1140px; 
         padding-right:80px;
         padding-left:80px;
+    }
+    .nav-icon{
+        .open-menu{
+            width:25px;
+        }
+        .close-menu{
+            width:25px;
+        }
     }
     
     a{
@@ -61,6 +70,13 @@ export const Wrapper = Styled.div`
         .tb-content {
             padding-right: 30px;
             padding-left: 30px;
+        }
+        
+    }
+    @media(max-width:500px){
+        .tb-content {
+            padding-right: 15px;
+            padding-left: 15px;
         }
     }
 `

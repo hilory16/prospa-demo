@@ -22,7 +22,12 @@ const ButtonNextStyles = styled.div`
 const Index = ({name, classList, handleClick}) => {
     return (
         <ButtonNextStyles>
-            <button className={`submit-button disabled next ${classList}`} type="submit" disabled={classList ? classList.includes('form-error') : null}> {name}</button>
+            {
+                handleClick
+                ?<button className={`submit-button disabled next ${classList}`} type="submit" disabled={classList ? classList.includes('form-error') : null} onClick={handleClick}> {name}</button>
+                :<button className={`submit-button disabled next ${classList}`} type="submit" disabled={classList ? classList.includes('form-error') : null} > {name}</button>
+            }
+            
         </ButtonNextStyles>
     );
 }
