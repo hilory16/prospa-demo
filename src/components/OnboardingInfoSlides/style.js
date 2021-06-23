@@ -16,6 +16,9 @@ export const Wrapper = Styled.div`
             padding:32px;
             padding-top:calc(32px + 52px + 24px);
         }
+        .onboarding-info-slides-item.bg-2{
+            background: #1B003B 0% 0% no-repeat padding-box;
+        }
         .prospa-logo{
             position:absolute;
             top:32px;

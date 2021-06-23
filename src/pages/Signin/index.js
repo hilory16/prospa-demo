@@ -14,7 +14,7 @@ function SignUp({history}) {
           <title>Prospa || Login to your account</title>
       </Helmet>
       <div className="onboarding-content d-flex">
-        <OnboardingInfoSlides />
+        <OnboardingInfoSlides bg="#1C1335" />
         <OnboardingFormArea initial signupLink>
           <SigninForm history={history}/>
         </OnboardingFormArea>
