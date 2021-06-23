@@ -1,6 +1,6 @@
 import {Formik, Form, Field} from 'formik';
 import * as yup from 'yup';
-import InputLayout from '../FormControls/InputLayout';
+import {RegularInput} from '../FormControls/InputLayout';
 import Button from '../FormControls/Button'
 import {Wrapper} from './style'
 
@@ -34,8 +34,8 @@ const Index = ({history}) => {
                 >
                     {({errors, isValid}) =>(
                         <Form>
-                            <InputLayout type="email" name="email" label="Email address"/>
-                            <InputLayout type="password" name="password" label="Enter password"/>
+                            <RegularInput type="email" name="email" label="Email address"/>
+                            <RegularInput type="password" name="password" label="Enter password"/>
                             <div className="">
                                 <Button name="Next" classList={!isValid || errors.email || errors.password ? 'form-error' : ''}/>
                             </div>

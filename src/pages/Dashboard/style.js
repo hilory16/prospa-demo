@@ -72,7 +72,7 @@ export const Wrapper = Styled.div`
                 .money-items{
                 }
                 .money-item{
-                    margin-right:55px;
+                    margin-right:50px;
                     h6{
                         font-size:14px;
                         line-height:19px;
@@ -95,6 +95,68 @@ export const Wrapper = Styled.div`
                     height:274px;
                 }
             }
+        }
+    }
+
+    
+
+    @media(max-width:1300px){
+        .dashboard-content.container{
+            padding-right:60px;
+            padding-left:60px;
+        }
+        .dashboard-content .account-analysis .summary .money-item {
+            margin-right: 40px;
+        }
+    }
+    
+    @media(max-width:1200px){
+        .dashboard-content.container{
+            padding-right:50px;
+            padding-left:50px;
+        }
+        .dashboard-content .account-analysis .summary .money-item {
+            margin-right: 30px;
+        }
+    }
+
+    @media(max-width:1130px){
+        .dashboard-content.container{
+            padding-right:35px;
+            padding-left:35px;
+        }
+        .dashboard-content .account-analysis .summary .money-item {
+            margin-right: 10px;
+        } 
+    }
+
+    // IPAD VIEWPORT{
+        @media(max-width:995px){
+            .main-content-area{
+                padding-left: 270px;
+            }
+            .dashboard-content .account-analysis .left, .dashboard-content .account-analysis .right {
+                width: 100%;
+                padding:0 !important;
+            }
+            .dashboard-content .account-analysis .left{
+                margin-bottom:25px;
+            }
+            ul li .bar {
+                width: 170px;
+            }
+        }
+    }
+
+    // BIG-MOBILE
+    @media(max-width:767px){
+        .main-content-area{
+            padding-left:0;
+        }
+        .dashboard-content.container {
+            padding-right: 30px;
+            padding-left: 30px;
+            max-width:100%;
         }
     }
 `

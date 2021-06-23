@@ -49,4 +49,18 @@ export const Wrapper = Styled.div`
             background: #FFCF56 0% 0% no-repeat padding-box;
         }
     }
+
+    // IPAD PRO VIEWPORT 
+    @media(max-width:1180px){
+        ul li .bar {
+            width: 130px;
+        }
+        
+    }
+    @media(max-width:1050px){
+        ul li .bar {
+            width: 100px;
+        }
+        
+    }
 `

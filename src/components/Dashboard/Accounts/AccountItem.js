@@ -6,7 +6,7 @@ const Index = ({details, icon}) => {
             <div className="top d-flex justify-content-between">
                 <div className="account-details">
                     <h4 className="account-type">{type}</h4>
-                    <h6 className="account-number">{bank} - {number}</h6>
+                    <h6 className="account-number">{bank} - <span>{number}</span></h6>
                 </div>
                 <img src={icon} alt="" className="account-icon"/>
             </div>

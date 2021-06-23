@@ -1,3 +1,5 @@
+
+import {useState} from 'react';
 import {Link} from 'react-router-dom'
 import SidebarLink from './SidebarLink';
 import BusinessLogoImg from '../../../assets/img/business-logo.png'
@@ -8,6 +10,7 @@ import {Sidebar} from './style'
 
 
 const Index = () => {
+    const [showAllBusinesses, setShowAllBusinesses] = useState(false)
     return (
         <Sidebar className="sidebar">
             <div className="business-accounts">
@@ -17,9 +20,9 @@ const Index = () => {
                         <h2 className="business-name">Clayvant Inc</h2>
                         <p className="manage-accounts mb-0">Manage account</p>
                     </div>
-                    <img src={SwitchBusinessImg} alt="" className="business-dropdown-arrow"/>
+                    <img src={SwitchBusinessImg} alt="" className={`business-dropdown-arrow ${showAllBusinesses ? 'rotate' : ""}`} onClick={() => (setShowAllBusinesses(!showAllBusinesses))}/>
                 </div>
-                <div className="businesses-dropdown d-none">
+                <div className={`businesses-dropdown ${showAllBusinesses ? 'active-all-businesses' : ""}`}>
                     <ul className="m-0 p-0">
                         <li className="businesses-dropdown-item">Clayvant Inc</li>
                         <li className="businesses-dropdown-item">

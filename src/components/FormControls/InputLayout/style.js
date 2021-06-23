@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import Styled from 'styled-components';
 
 export const RegularInputWrapper = Styled.div`
@@ -42,29 +43,23 @@ export const RegularInputWrapper = Styled.div`
         display:block;
         transition:all ease .4s;
     }
-    .input:focus, .input:valid {
+    .input:focus, .input:valid, .email:not([value=""]) {
         padding-top:22px;
     }
-    .input:focus + label, .input:valid + label{
+    .input:focus + label, .input:valid + label, .email:not([value=""]) + label{
         top:7px;
         color:#FA4A84;
         font-size:10px;
         line-height:14px;
     }
-    .input:not(:focus) + label{
-        color:#1C1335;
+    .input:not(:focus):not([value=""]) + label{
+        color:#8397AB;
     }
     .input:focus + label + .active-field::after {
         width:100%;
     }
-    .email:not([value="email"]){
-        padding-top:22px;
-    }
-    .email:not([value=""]) + label{
-        top:7px;
-        color:red;
-        font-size:10px;
-        line-height:14px;
+    .email:focus + label{
+        color:#FA4A84;  
     }
     label{
         color: #8397AB;
@@ -76,5 +71,41 @@ export const RegularInputWrapper = Styled.div`
         top:17px;
         transition:all ease .3s;
         pointer-events:none;
+    }
+    
+`
+
+export const CountryCode = Styled(RegularInputWrapper)`
+    position:relative;
+    margin-right:12px;
+    border-bottom:2px solid #E0E2EC;
+    width:178px;
+    background: #F4F8FB 0% 0% no-repeat padding-box;
+    // padding:0 12px 0 16px;
+    .country-code-label{
+        font-size:10px;
+        z-index:500;
+        top:7px;
+    }
+    .phone-caret{
+        position: absolute;
+        z-index: 202;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+    }
+    .active-line{
+        width:0%;
+        height:2px;
+        z-index:300;
+        position:absolute;
+        bottom:-1px;
+        background: transparent linear-gradient(270deg, #00D2FF 0%, #7E51FF 51%, #FA4A84 100%) 0% 0% no-repeat padding-box;
+        margin:0 auto;
+        display:block;
+        transition:all ease .4s;
+    }
+    .active-line.show{
+        width:90%;
     }
 `

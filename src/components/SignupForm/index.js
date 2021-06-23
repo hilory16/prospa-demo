@@ -1,6 +1,6 @@
 import {Formik, Form, Field} from 'formik';
 import * as yup from 'yup';
-import InputLayout from '../FormControls/InputLayout';
+import {RegularInput, PhoneCountryCode} from '../FormControls/InputLayout';
 import Button from '../FormControls/Button'
 import {Wrapper} from './style'
 
@@ -18,13 +18,14 @@ const Index = ({history}) => {
             <h6 className="onboarding-description">A short description about account types</h6>
             <div>
                 <Formik
-                    validateOnChange={true}
+                    validateOnChange
+                    validateOnMount
                     initialValues={{
                         firstname:"", 
                         lastname:"", 
                         phone:"", 
                         email:"",
-                        countryCode:"234"
+                        countryCode:"ng"
                     }}
                     onSubmit={async (data,{resetForm}) => {
                         console.log(data)
@@ -38,33 +39,17 @@ const Index = ({history}) => {
                     }}
                     validationSchema={validationSchema}
                 >
-                    {({values, errors, handleChange, handleBlur, handleSubmit, isValid}) =>(
+                    {({values, errors, setFieldValue, handleSubmit, isValid}) =>(
                         <Form>
-                            <InputLayout type="text" name="firstname" label="Firstname"/>
-                            <InputLayout type="text" name="lastname" label="Lastname"/>
+                            <RegularInput type="text" name="firstname" label="First name"/>
+                            <RegularInput type="text" name="lastname" label="Last name"/>
                             
                             <div className="phone-input-container d-flex">
-                                <div className="country-phone-code form-field">
-                                    <Field type="number"  name="countryCode" className="input number hide-number-arrow" required autocomplete="off" min="0"/>
-                                    {/* <PhoneInput
-                                    countryCodeEditable={false}
-                                    inputProps={{
-                                        name: 'phone',
-                                        required: true,
-                                        autoFocus: true
-                                    }}
-                                    /> */}
-                                    <label>Country</label>
-                                </div>
-                                
-                                <div className="form-field phone-number">
-                                    <Field type="number"  name="phone" className="input number hide-number-arrow" required autocomplete="off" min="0" />
-                                    <label>Phone number</label>
-                                    <div className="active-field"></div>
-                                </div>
+                                <PhoneCountryCode value={values.countryCode} handleChange ={(phone) => setFieldValue('countryCode',phone)} label="Country" name="countryCode"/>
+                                <RegularInput type="number" name="phone" label="Phone number"/>
                             </div>
 
-                            <InputLayout type="email" name="email" label="Email address"/>
+                            <RegularInput type="email" name="email" label="Email address"/>
                             <div className="">
                                 <Button name="Next" classList={!isValid || errors.firstname || errors.lastname  || errors.email || errors.phone || errors.countryCode ? 'form-error' : ''}/>
                             </div>

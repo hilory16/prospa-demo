@@ -37,6 +37,10 @@ export const Wrapper = Styled.div`
         li:first-child{
             padding-top:0;
         }
+        li:last-child{
+            border-bottom:none;
+            padding-bottom:0;
+        }
         .icon{
             width:40px;
             height:40px;

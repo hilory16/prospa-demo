@@ -35,4 +35,15 @@ export const Wrapper = Styled.div`
             height:44px;
         }
     }
+    @media(max-width:1050px){
+        .account-item .account-icon {
+            width: 34px;
+            height: 34px;
+        }
+    }
+    @media(max-width:991px){
+        .account-number span{
+            display:block;
+        }
+    }
 `

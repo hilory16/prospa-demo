@@ -40,18 +40,24 @@ export const Sidebar = Styled.div`
         }
         .business-dropdown-arrow{
             cursor:pointer;
+            transition:all ease-in-out .3s;
+        }
+        .business-dropdown-arrow.rotate{
+            transform:rotate(180deg)
         }
         .businesses-dropdown{
             position:absolute;
-            box-shadow: 0px 4px 16px #8397AB52;
-            border: 1px solid #EEEFF7;
+            box-shadow: 0px 0px 0px #8397AB52;
             background:#fff;
             border-radius: 4px;
             // width:85%;
             left:21.5px;
             right:21.5px;
-            margin-top:10px;
+            margin-top:0;
+            overflow-y:hidden;
             z-index:100;
+            height:0;
+            transition:all ease-in-out .3s;
             li{
                 list-style:none;
                 color: #1C1335;
@@ -60,6 +66,7 @@ export const Sidebar = Styled.div`
                 line-height:17px;
                 padding:14px 20px;
                 border-bottom: .5px solid #EEEFF7;
+                transition:all ease-in-out .3s;
             }
             li:nth-last-child(2){
                 border:none;
@@ -68,6 +75,7 @@ export const Sidebar = Styled.div`
                 color: #8397AB;
                 :hover{
                     text-decoration:none;
+                    color:#FA4A84;
                 }
                 
             }
@@ -79,6 +87,13 @@ export const Sidebar = Styled.div`
                 line-height:15px;
                 cursor:pointer;
             }
+        }
+        .active-all-businesses{
+            height:auto;
+            box-shadow: 0px 4px 16px #8397AB52;
+            margin-top:10px;
+            border: 1px solid #EEEFF7;
+
         }
     }
     .sidebar-links{
@@ -93,6 +108,14 @@ export const Sidebar = Styled.div`
             width:108px;
             height:24px;
         }
+    }
+    @media(max-width:995px){
+        width: 270px;
+    }
+
+    @media(max-width:767px){
+        // width: 280px;
+        display:none;
     }
 `
 export const LinkWrapper = Styled.li`

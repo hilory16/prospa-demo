@@ -10,12 +10,12 @@ const Index = () => {
     return (
         <Wrapper>
             <DashboardSidebar/>
-            <main className="main-content-area">
+            <main className="main-content-area pb-4">
                 <DashboardTopbar/>
 
                 <div className="dashboard-content container">
-                    <div className="d-flex justify-content-between align-items-center welcome-message-container">
-                        <div className="welcome-message ">
+                    <div className="d-flex justify-content-between align-items-center welcome-message-container flex-wrap ">
+                        <div className="welcome-message mr-4 ">
                             <h3 className="mb-0">Welcome back, Kathy</h3>
                             <h6 className="">Here’s what has been happening in the last <Link to="">7 days</Link> </h6>
                         </div>
@@ -29,7 +29,7 @@ const Index = () => {
                     <Accounts/>
 
                     <div className="account-analysis">
-                        <div className="d-flex">
+                        <div className="d-flex flex-wrap">
                             <div className="left pr-2">
                                 <div className="summary">
                                     <h4>June summary</h4>
