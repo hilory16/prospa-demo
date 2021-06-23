@@ -17,11 +17,18 @@ export const Wrapper = Styled.div`
         transition: all 500ms;
       }
       .my-node-exit {
-        opacity: 1;
+        // opacity: 0;
+        // transform:translateY(0);
       }
       .my-node-exit-active {
         opacity: 0;
-        transition: opacity 200ms;
+        transform:translateY(100%);
+        // transition: all 1000ms;
+      }
+      .my-node-exit-done{
+        opacity: 1;
+        transform:translateY(0);
+        transition: transform 500ms;
       }
     
     //MOBILE VIEWPORT 

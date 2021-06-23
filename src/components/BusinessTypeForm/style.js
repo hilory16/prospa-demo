@@ -4,7 +4,7 @@ export const Wrapper = Styled.div`
     max-width:380px;
     .onboarding-name{
         color: #1B003B;
-        font-size:27px;
+        font-size:26px;
         font-weight:600;
         line-height:37px;
        

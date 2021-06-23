@@ -8,7 +8,23 @@ import {RegularInputWrapper, CountryCode} from './style'
 export const RegularInput = ({type, name, label}) => {
     return (
         <RegularInputWrapper className="form-field">
-            <Field type={type} name={name} className={`input ${type} hide-number-arrow`} required autocomplete="off"/>
+            <Field type={type} name={name} className={`input ${type} hide-number-arrow`} required autocomplete="off" handleChange={() => console.log("object")}/>
+            <label>{label}</label>
+            <div className="active-field"></div>
+        </RegularInputWrapper>
+    );
+}
+
+export const RegularPhoneInput = ({type, name, label, handleChange, value}) => {
+    function onChange(phone){
+        const re =/^\d+$/;
+        if (phone === '' || re.test(phone)) {
+            handleChange(phone)
+        }
+     }
+    return (
+        <RegularInputWrapper className="form-field">
+            <input type="number" name={"phone"} className={`input ${type} hide-number-arrow`} value={value} required autocomplete="off" onChange={(e) => onChange(e.target.value)}/>
             <label>{label}</label>
             <div className="active-field"></div>
         </RegularInputWrapper>
@@ -17,7 +33,7 @@ export const RegularInput = ({type, name, label}) => {
 
 export const PhoneCountryCode = ({value, name, label, handleChange}) => {
     const [active, setActive] = useState(false)
-    // console.log(active)
+    
     return (
         <CountryCode className="country-phone-code form-field" onFocus={() =>setActive(true)} onBlur={() =>setActive(false)} onMouseLeave={() =>setActive(false)}>
             

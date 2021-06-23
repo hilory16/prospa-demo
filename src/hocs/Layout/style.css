@@ -88,6 +88,6 @@ code {
 .react-tel-input input:focus + label{
   color:#FA4A84;
 }
-input:focus, select:focus{
+input:focus, select:focus, .PhoneInput--focus, .flag-dropdown:focus{
   outline:none !important;
 }

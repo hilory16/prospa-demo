@@ -1,6 +1,6 @@
 import {Formik, Form, Field} from 'formik';
 import * as yup from 'yup';
-import {RegularInput, PhoneCountryCode} from '../FormControls/InputLayout';
+import {RegularInput, PhoneCountryCode, RegularPhoneInput} from '../FormControls/InputLayout';
 import Button from '../FormControls/Button'
 import {Wrapper} from './style'
 
@@ -33,14 +33,13 @@ const Index = ({history, handlePage, formData}) => {
                     }}
                     validationSchema={validationSchema}
                 >
-                    {({values, errors, setFieldValue, handleSubmit, isValid}) =>(
+                    {({values, errors, setFieldValue, handleChange, isValid}) =>(
                         <Form>
                             <RegularInput type="text" name="firstname" label="First name"/>
                             <RegularInput type="text" name="lastname" label="Last name"/>
-                            
                             <div className="phone-input-container d-flex">
-                                <PhoneCountryCode value={values.countryCode} handleChange ={(phone) => setFieldValue('countryCode',phone)} label="Country" name="countryCode"/>
-                                <RegularInput type="number" name="phone" label="Phone number"/>
+                                <PhoneCountryCode value={values.countryCode} handleChange ={(phone) => console.log("object")} label="Country" name="countryCode"/>
+                                <RegularPhoneInput name="phone" label="Phone number" handleChange={(phone) => setFieldValue('phone',phone)} value={values.phone}/>
                             </div>
 
                             <RegularInput type="email" name="email" label="Email address"/>

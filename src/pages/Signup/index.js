@@ -15,32 +15,34 @@ function SignUp({history}) {
                                       email:"",
                                       countryCode:"ng"
                                   })
-  const [inProp, setInProp] = useState(false);
+  // const [inProp, setInProp] = useState(false);
   return (
     <Wrapper>
       <div className="onboarding-content d-flex">
         <OnboardingInfoSlides />
         <OnboardingFormArea handlePage={() =>{
           setActive("biodata")
+          // setInProp(false)
           }} active={active}>
           {
-            // active === "biodata"
-            // ?<CSSTransition in={active === "biodata"} timeout={500} classNames="my-node">
-            //   <SignupForm history={history} 
-            //     handlePage={() =>{
-            //     setActive("business") 
-            //     setInProp(true)
-                  
-            //     }}
-            //   />
-            // </CSSTransition>
+            active === "biodata"
+            ?<CSSTransition in={active === "biodata"} timeout={500} classNames="my-node">
+              <SignupForm history={history} 
+                handlePage={(data) =>{
+                setActive("business") 
+                // setInProp(true)
+                setFormData(data)
+                }}
+                formData={formData}
+              />
+            </CSSTransition>
             
-            // :<CSSTransition in={inProp} timeout={500} classNames="my-node">
-            //   <BusinessTypeForm history={history} />
-            // </CSSTransition>
+            :<CSSTransition in={active === "biodata"} timeout={500} classNames="my-node">
+              <BusinessTypeForm history={history} />
+            </CSSTransition>
            
           }
-          <CSSTransition in={inProp} timeout={500} classNames="my-node" >
+          {/* <CSSTransition in={inProp} timeout={500} classNames="my-node" >
             {
               active === "biodata"
               ?<SignupForm history={history} 
@@ -55,7 +57,7 @@ function SignUp({history}) {
               :<BusinessTypeForm history={history} />
             }
             
-          </CSSTransition>
+          </CSSTransition> */}
         </OnboardingFormArea>
       </div>
     </Wrapper>

@@ -40,6 +40,5 @@ BusinessTypeItem.propTypes ={
     desc:PropTypes.string.isRequired,
     businessType:PropTypes.string.isRequired,
     businessTypeValue:PropTypes.string.isRequired,
-    playerSelected:PropTypes.bool.isRequired,
     setBusinessType:PropTypes.func.isRequired
 }

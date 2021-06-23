@@ -43,10 +43,10 @@ export const RegularInputWrapper = Styled.div`
         display:block;
         transition:all ease .4s;
     }
-    .input:focus, .input:valid, .email:not([value=""]) {
+    .input:focus, .input:valid, .input:not([value=""]) {
         padding-top:22px;
     }
-    .input:focus + label, .input:valid + label, .email:not([value=""]) + label{
+    .input:focus + label, .input:valid + label, .input:not([value=""]) + label{
         top:7px;
         color:#FA4A84;
         font-size:10px;
@@ -55,6 +55,8 @@ export const RegularInputWrapper = Styled.div`
     .input:not(:focus):not([value=""]) + label{
         color:#8397AB;
     }
+
+    
     .input:focus + label + .active-field::after {
         width:100%;
     }
@@ -78,7 +80,7 @@ export const RegularInputWrapper = Styled.div`
             font-size:13px;
             line-height:19px;
         }
-        .input:focus + label, .input:valid + label, .email:not([value=""]) + label{
+        .input:focus + label, .input:valid + label, .input:not([value=""]) + label{
             font-size:11px;
             line-height:16px;
             top:5px;

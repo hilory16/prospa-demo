@@ -3,7 +3,6 @@ import { Route, BrowserRouter as Router } from 'react-router-dom';
 import { spring,AnimatedSwitch } from 'react-router-transition';
 import Layout from './hocs/Layout';
 import Signup from './pages/Signup';
-import Business from './pages/Business';
 import Signin from './pages/Signin'
 import Dashboard from './pages/Dashboard'
 function mapStyles(styles) {
@@ -54,9 +53,7 @@ const Routes = () =>{
                 >
                     <Route path="/dashboard" component={Dashboard} />   
                     <Route path="/signin" component={Signin} />
-                    <Route path="/signup/2" component={Business} />
                     <Route path="/" component={Signup} />
-                    {/* <Route path="/me" component={App} /> */}
                 </AnimatedSwitch>
             </Router>
         </Layout>

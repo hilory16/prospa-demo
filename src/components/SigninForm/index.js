@@ -24,9 +24,7 @@ const Index = ({history}) => {
                     onSubmit={async (data,{resetForm}) => {
                         console.log(data)
                         try{
-                            setTimeout(() =>{
-                                history.push('/dashboard')
-                            },1000)
+                            history.push('/dashboard')
                         }
                         catch(e){
                         }
