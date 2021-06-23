@@ -9,7 +9,12 @@ import {Wrapper} from './style';
 
 function SignUp({history}) {
   const [active, setActive] = useState('biodata')
-  // console.log(active)
+  const [formData, setFormData] = useState({firstname:"", 
+                                      lastname:"", 
+                                      phone:"", 
+                                      email:"",
+                                      countryCode:"ng"
+                                  })
   const [inProp, setInProp] = useState(false);
   return (
     <Wrapper>
@@ -39,11 +44,13 @@ function SignUp({history}) {
             {
               active === "biodata"
               ?<SignupForm history={history} 
-                  handlePage={() =>{
+                  handlePage={(data) =>{
                   setActive("business") 
                   setInProp(true)
-                    
+                  setFormData(data)
+                  
                   }}
+                  formData={formData}
                 />
               :<BusinessTypeForm history={history} />
             }
